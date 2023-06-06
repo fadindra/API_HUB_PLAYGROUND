@@ -32,7 +32,7 @@ return [
     ],
 
     'open_ai' => [
-        'API_KEY' => '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'
+        'API_KEY' => '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'
     ]
 
 ];

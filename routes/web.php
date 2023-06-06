@@ -7,14 +7,18 @@ Route::get('/', function () {
 });
 
 
-// Route::get('apen-ai', function () {
-//     $yourApiKey = getenv('YOUR_API_KEY');
-//     $client = OpenAI::client($yourApiKey);
-
-//     $result = $client->completions()->create([
-//         'model' => 'text-davinci-003',
-//         'prompt' => 'PHP is',
-//     ]);
-
-//     echo $result['choices'][0]['text'];
-// })->name('openai');
+Route::get('open-ai', function () {
+    try {
+        $yourApiKey = config('services.open_ai.API_KEY');
+        // dd($yourApiKey);
+        $client = \OpenAI::client($yourApiKey);
+    
+        $result = $client->completions()->create([
+            'model' => 'text-davinci-003',
+            'prompt' => 'Bit coin is ',
+        ]);
+        // dd($result);
+    } catch (\Exception $e) {
+        dd($e->getMessage());
+    }
+})->name('openai');
