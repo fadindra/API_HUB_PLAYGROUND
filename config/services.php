@@ -31,4 +31,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'open_ai' => [
+        'API_KEY' => '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'
+    ]
+
 ];

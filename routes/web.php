@@ -2,17 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// Route::get('apen-ai', function () {
+//     $yourApiKey = getenv('YOUR_API_KEY');
+//     $client = OpenAI::client($yourApiKey);
+
+//     $result = $client->completions()->create([
+//         'model' => 'text-davinci-003',
+//         'prompt' => 'PHP is',
+//     ]);
+
+//     echo $result['choices'][0]['text'];
+// })->name('openai');
